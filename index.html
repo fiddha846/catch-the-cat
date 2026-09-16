@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catch the Cat 🐈</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- START SCREEN -->
+    <main id="startScreen" class="screen">
+
+        <div class="paw">🐾</div>
+
+        <h1>CATCH THE CAT</h1>
+
+        <p class="subtitle">
+            The cat does NOT want to be caught.
+        </p>
+
+        <p class="challenge">
+            Think you can catch it?
+        </p>
+
+        <button id="startButton">
+            START GAME
+        </button>
+
+        <p class="hint">
+            Tap the cat as many times as you can!
+        </p>
+
+    </main>
+
+
+    <!-- GAME SCREEN -->
+    <main id="gameScreen" class="game-screen hidden">
+
+        <div class="game-info">
+
+            <div>
+                TIME
+                <span id="timer">30</span>
+            </div>
+
+            <div>
+                SCORE
+                <span id="score">0</span>
+            </div>
+
+        </div>
+
+
+        <div id="gameArea">
+
+            <button id="cat" aria-label="Catch the cat">
+                🐈
+            </button>
+
+        </div>
+
+
+        <p id="gameMessage">
+            Catch me if you can 😼
+        </p>
+
+    </main>
+
+
+    <!-- GAME OVER SCREEN -->
+    <main id="gameOverScreen" class="screen hidden">
+
+        <div class="paw">🐾</div>
+
+        <h1>GAME OVER</h1>
+
+        <p class="final-text">
+            The cat escaped!
+        </p>
+
+        <div class="final-score">
+            SCORE:
+            <span id="finalScore">0</span>
+        </div>
+
+        <p id="finalMessage">
+            Skill issue. 😭
+        </p>
+
+        <button id="restartButton">
+            PLAY AGAIN
+        </button>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

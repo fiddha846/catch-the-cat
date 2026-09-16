@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3a2755,
+            transparent 45%
+        ),
+        #17121f;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   GENERAL SCREEN
+========================= */
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   START SCREEN
+========================= */
+
+.paw {
+    font-size: 70px;
+
+    animation: float 2s ease-in-out infinite;
+}
+
+
+h1 {
+    margin-top: 15px;
+
+    font-size: clamp(40px, 12vw, 70px);
+
+    letter-spacing: 4px;
+
+    color: #ffd6e7;
+
+    text-shadow:
+        0 0 10px rgba(255, 182, 215, 0.5),
+        0 0 30px rgba(255, 182, 215, 0.2);
+}
+
+
+.subtitle {
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    color: #ddd;
+}
+
+
+.challenge {
+    margin-top: 10px;
+
+    font-size: 20px;
+
+    color: #ffb6d5;
+
+    font-weight: bold;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+#startButton,
+#restartButton {
+
+    margin-top: 35px;
+
+    padding: 16px 38px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ff7eb3;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255, 126, 179, 0.35);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+#startButton:hover,
+#restartButton:hover {
+
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 12px 35px rgba(255, 126, 179, 0.5);
+}
+
+
+#startButton:active,
+#restartButton:active {
+
+    transform: scale(0.96);
+}
+
+
+.hint {
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    color: #9e94aa;
+}
+
+
+/* =========================
+   GAME SCREEN
+========================= */
+
+.game-screen {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    position: relative;
+}
+
+
+/* SCORE + TIMER */
+
+.game-info {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(90%, 500px);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    z-index: 10;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #b9afc5;
+}
+
+
+.game-info div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.game-info span {
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #ffd6e7;
+
+}
+
+
+/* GAME AREA */
+
+#gameArea {
+
+    position: absolute;
+
+    top: 90px;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 100px;
+
+}
+
+
+/* CAT */
+
+#cat {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 70px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    touch-action: manipulation;
+
+    transition:
+        left 0.15s ease,
+        top 0.15s ease;
+
+    filter:
+        drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+
+    animation: catBounce 1s ease-in-out infinite;
+}
+
+
+#cat:active {
+
+    transform: scale(0.8);
+}
+
+
+/* MESSAGE */
+
+#gameMessage {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    color: #ffb6d5;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes catBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
