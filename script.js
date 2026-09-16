@@ -1,3 +1,5 @@
+const meowSound = new Audio("meow.mp3");
+
 const startScreen = document.getElementById("startScreen");
 const gameScreen = document.getElementById("gameScreen");
 const gameOverScreen = document.getElementById("gameOverScreen");
@@ -73,6 +75,10 @@ function catchCat() {
     score++;
 
     scoreDisplay.textContent = score;
+
+    // Play the real cat sound
+    meowSound.currentTime = 0;
+    meowSound.play();
 
     changeMessage();
 
